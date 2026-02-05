@@ -1,7 +1,7 @@
 import { useState } from 'react';
+import { FaTimes, FaGraduationCap } from 'react-icons/fa';
 import { LoginForm } from './LoginForm';
 import { SignupForm } from './SignupForm';
-import { Modal } from '../Modal';
 import './Auth.css';
 
 export function AuthModal({ isOpen, onClose }) {
@@ -16,17 +16,35 @@ export function AuthModal({ isOpen, onClose }) {
         setMode(mode === 'login' ? 'signup' : 'login');
     };
 
+    if (!isOpen) return null;
+
     return (
-        <Modal
-            isOpen={isOpen}
-            onClose={onClose}
-            title={mode === 'login' ? 'Welcome back!' : 'Create your account'}
-        >
-            {mode === 'login' ? (
-                <LoginForm onSwitch={toggleMode} onSuccess={handleSuccess} />
-            ) : (
-                <SignupForm onSwitch={toggleMode} onSuccess={handleSuccess} />
-            )}
-        </Modal>
+        <div className="auth-overlay" onClick={(e) => e.target === e.currentTarget && onClose()}>
+            <div className="auth-card">
+                <button className="auth-card__close" onClick={onClose} aria-label="Close">
+                    <FaTimes />
+                </button>
+
+                <div className="auth-header">
+                    <div className="auth-header__logo">
+                        <FaGraduationCap />
+                    </div>
+                    <h2 className="auth-header__title">
+                        {mode === 'login' ? 'Welcome back!' : 'Create account'}
+                    </h2>
+                    <p className="auth-header__subtitle">
+                        {mode === 'login'
+                            ? 'Sign in to UNIBEN GPA Calculator'
+                            : 'Track your GPA with style'}
+                    </p>
+                </div>
+
+                {mode === 'login' ? (
+                    <LoginForm onSwitch={toggleMode} onSuccess={handleSuccess} />
+                ) : (
+                    <SignupForm onSwitch={toggleMode} onSuccess={handleSuccess} />
+                )}
+            </div>
+        </div>
     );
 }

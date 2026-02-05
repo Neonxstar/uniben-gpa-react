@@ -101,6 +101,23 @@ export function AuthProvider({ children }) {
         }
     };
 
+    const signInWithGoogle = async () => {
+        try {
+            setError(null);
+            const { error } = await supabase.auth.signInWithOAuth({
+                provider: 'google',
+                options: {
+                    redirectTo: window.location.origin,
+                },
+            });
+            if (error) throw error;
+            return { error: null };
+        } catch (err) {
+            setError(err.message);
+            return { error: err };
+        }
+    };
+
     const value = {
         user,
         loading,
@@ -109,6 +126,7 @@ export function AuthProvider({ children }) {
         signIn,
         signOut,
         resetPassword,
+        signInWithGoogle,
         isAuthenticated: !!user,
     };
 
