@@ -1,0 +1,122 @@
+.course-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Course card */
+.course-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: border-color 150ms, box-shadow 150ms;
+}
+
+.course-card:hover {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.course-card--forecasted {
+    border-style: dashed;
+    border-color: #2a7d6e;
+    background: rgba(42, 125, 110, 0.02);
+}
+
+.course-card__grade {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(42, 125, 110, 0.08);
+    color: #2a7d6e;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.course-card--forecasted .course-card__grade {
+    background: #2a7d6e;
+    color: #fff;
+}
+
+.course-card__info {
+    flex: 1;
+    min-width: 0;
+}
+
+.course-card__name {
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: #111;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.course-card__details {
+    display: flex;
+    gap: 12px;
+    font-size: 0.75rem;
+    color: #777;
+}
+
+.course-card__actions {
+    display: flex;
+    gap: 4px;
+}
+
+.action-btn {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #999;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 150ms;
+}
+
+.action-btn:hover {
+    background: #f2f2f2;
+    border-color: #e5e5e5;
+    color: #4a4a4a;
+}
+
+.action-btn--delete:hover {
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: #b91c1c;
+}
+
+/* Empty state */
+.course-list__empty {
+    text-align: center;
+    padding: 32px 16px;
+}
+
+.course-list__empty-icon {
+    font-size: 1.75rem;
+    margin-bottom: 8px;
+    opacity: 0.35;
+}
+
+.course-list__empty p {
+    color: #777;
+    font-size: 0.875rem;
+    margin-bottom: 2px;
+}
+
+.course-list__empty-hint {
+    font-size: 0.75rem;
+    color: #999;
+}

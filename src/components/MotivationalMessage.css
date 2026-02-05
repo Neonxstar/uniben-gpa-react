@@ -1,0 +1,78 @@
+.motivational-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    margin-top: 16px;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--message-color, #4CAF50);
+    background: color-mix(in srgb, var(--message-color, #4CAF50) 10%, transparent);
+    border-left: 3px solid var(--message-color, #4CAF50);
+}
+
+.motivational-message__icon {
+    flex-shrink: 0;
+    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+    margin-top: 1px;
+}
+
+.motivational-message__text {
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* Fallback for browsers without color-mix */
+@supports not (background: color-mix(in srgb, red 50%, blue)) {
+    .motivational-message--success {
+        background: rgba(46, 125, 50, 0.1);
+        color: #2E7D32;
+        border-left-color: #2E7D32;
+    }
+
+    .motivational-message--positive {
+        background: rgba(76, 175, 80, 0.1);
+        color: #4CAF50;
+        border-left-color: #4CAF50;
+    }
+
+    .motivational-message--warning {
+        background: rgba(255, 152, 0, 0.1);
+        color: #FF9800;
+        border-left-color: #FF9800;
+    }
+
+    .motivational-message--info {
+        background: rgba(33, 150, 243, 0.1);
+        color: #2196F3;
+        border-left-color: #2196F3;
+    }
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .motivational-message {
+    background: color-mix(in srgb, var(--message-color, #4CAF50) 15%, transparent);
+}
+
+[data-theme="dark"] .motivational-message--success {
+    background: rgba(46, 125, 50, 0.2);
+    color: #81C784;
+}
+
+[data-theme="dark"] .motivational-message--positive {
+    background: rgba(76, 175, 80, 0.2);
+    color: #A5D6A7;
+}
+
+[data-theme="dark"] .motivational-message--warning {
+    background: rgba(255, 152, 0, 0.2);
+    color: #FFB74D;
+}
+
+[data-theme="dark"] .motivational-message--info {
+    background: rgba(33, 150, 243, 0.2);
+    color: #64B5F6;
+}

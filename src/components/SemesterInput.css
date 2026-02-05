@@ -1,0 +1,86 @@
+.semester-input {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.semester-input__field {
+    margin-bottom: 12px;
+}
+
+.semester-input__field label {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: #4a4a4a;
+    margin-bottom: 6px;
+}
+
+.semester-input__field input {
+    width: 100%;
+    padding: 12px;
+    background: #f2f2f2;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    font-size: 0.9375rem;
+    color: #111;
+    font-family: inherit;
+    transition: border-color 150ms, background 150ms;
+}
+
+.semester-input__field input:focus {
+    outline: none;
+    border-color: #2a7d6e;
+    background: #fff;
+}
+
+.semester-input__field input::placeholder {
+    color: #999;
+}
+
+.semester-input__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.semester-input__actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.semester-input__actions button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 150ms, transform 150ms;
+}
+
+.semester-input__actions .btn-primary {
+    background: #2a7d6e;
+    border: none;
+    color: #fff;
+}
+
+.semester-input__actions .btn-primary:hover {
+    background: #247263;
+}
+
+.semester-input__actions .btn-primary:active {
+    transform: scale(0.98);
+}
+
+.semester-input__actions .btn-secondary {
+    background: #f2f2f2;
+    border: 1px solid #e5e5e5;
+    color: #4a4a4a;
+}
+
+.semester-input__actions .btn-secondary:hover {
+    background: #e5e5e5;
+}

@@ -1,0 +1,222 @@
+.forecast-tool {
+    padding: 4px;
+}
+
+/* Target GPA */
+.forecast-tool__target {
+    margin-bottom: 20px;
+}
+
+.forecast-tool__target label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.forecast-tool__target input {
+    width: 80px;
+    padding: 8px 12px;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.forecast-tool__target input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+/* Scenarios */
+.forecast-tool__scenarios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.forecast-tool__scenario {
+    text-align: center;
+    padding: 16px 8px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.forecast-tool__scenario--current {
+    background: linear-gradient(135deg, var(--accent) 0%, #1f5f54 100%);
+    color: #fff;
+}
+
+.forecast-tool__scenario--best {
+    background: rgba(22, 163, 74, 0.1);
+    border: 1px solid rgba(22, 163, 74, 0.3);
+}
+
+.forecast-tool__scenario--worst {
+    background: rgba(220, 38, 38, 0.1);
+    border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+.forecast-tool__scenario-label {
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.8;
+    margin-bottom: 4px;
+}
+
+.forecast-tool__scenario-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.forecast-tool__scenario--best .forecast-tool__scenario-value {
+    color: #16a34a;
+}
+
+.forecast-tool__scenario--worst .forecast-tool__scenario-value {
+    color: #dc2626;
+}
+
+.forecast-tool__scenario-hint {
+    font-size: 0.625rem;
+    opacity: 0.7;
+}
+
+.forecast-tool__target-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #fbbf24;
+    color: #78350f;
+    font-size: 0.625rem;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Courses */
+.forecast-tool__courses {
+    margin-top: 20px;
+}
+
+.forecast-tool__courses h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.forecast-tool__course {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: var(--bg-input);
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.forecast-tool__course-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.forecast-tool__course-name {
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+}
+
+.forecast-tool__course-units {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.forecast-tool__grade-select {
+    padding: 8px 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.forecast-tool__grade-select:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+/* Empty State */
+.forecast-tool__empty {
+    text-align: center;
+    padding: 32px 16px;
+    background: var(--bg-input);
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.forecast-tool__empty p {
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.forecast-tool__add-btn {
+    padding: 10px 20px;
+    background: var(--accent);
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 150ms;
+}
+
+.forecast-tool__add-btn:hover {
+    background: var(--accent-hover);
+}
+
+/* Actions */
+.forecast-tool__actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.forecast-tool__actions button {
+    flex: 1;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 150ms;
+}
+
+.forecast-tool__actions .btn-primary {
+    background: var(--accent);
+    border: none;
+    color: #fff;
+}
+
+.forecast-tool__actions .btn-primary:hover {
+    background: var(--accent-hover);
+}
+
+.forecast-tool__actions .btn-secondary {
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+}
+
+.forecast-tool__actions .btn-secondary:hover {
+    background: var(--border);
+}

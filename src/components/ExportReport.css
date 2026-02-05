@@ -1,0 +1,369 @@
+.export-report {
+    padding: 4px;
+}
+
+/* Name Input */
+.export-report__name-input {
+    margin-bottom: 16px;
+}
+
+.export-report__name-input label {
+    display: block;
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+
+.export-report__name-input input {
+    width: 100%;
+    padding: 12px;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.9375rem;
+    color: var(--text-primary);
+}
+
+.export-report__name-input input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+/* Export Actions */
+.export-report__actions {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.export-btn {
+    flex: 1;
+    padding: 14px;
+    background: var(--accent);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 150ms;
+}
+
+.export-btn:hover:not(:disabled) {
+    background: var(--accent-hover);
+}
+
+.export-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Share Actions */
+.export-report__share {
+    margin-bottom: 16px;
+}
+
+.export-report__share-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.export-report__share-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.share-btn {
+    flex: 1;
+    padding: 10px;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 150ms;
+}
+
+.share-btn:hover {
+    background: var(--border);
+}
+
+.share-btn--whatsapp {
+    background: #25d366;
+    border-color: #25d366;
+    color: #fff;
+}
+
+.share-btn--whatsapp:hover {
+    background: #1da851;
+}
+
+.share-btn--email {
+    background: #ea4335;
+    border-color: #ea4335;
+    color: #fff;
+}
+
+.share-btn--email:hover {
+    background: #c5221f;
+}
+
+/* Message */
+.export-report__message {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 12px;
+    background: rgba(42, 125, 110, 0.1);
+    color: var(--accent);
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Report Preview */
+.export-report__preview {
+    max-height: 350px;
+    overflow-y: auto;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.report-card {
+    background: #fff;
+    padding: 24px;
+    color: #111;
+}
+
+/* Header */
+.report-header {
+    text-align: center;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #5b2886;
+}
+
+.report-logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 8px;
+}
+
+.report-header h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #5b2886;
+    margin-bottom: 2px;
+}
+
+.report-header h3 {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Student */
+.report-student {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.report-student-label {
+    font-size: 0.75rem;
+    color: #777;
+}
+
+.report-student-name {
+    font-weight: 600;
+    color: #111;
+    margin-left: 4px;
+}
+
+/* Date */
+.report-date {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #777;
+    margin-bottom: 16px;
+}
+
+/* Summary */
+.report-summary {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 16px;
+}
+
+.report-gpa-block {
+    text-align: center;
+}
+
+.report-gpa-label {
+    display: block;
+    font-size: 0.6875rem;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+}
+
+.report-gpa-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #5b2886;
+}
+
+.report-classification {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* Stats */
+.report-stats {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding: 12px;
+    background: #f7f7f7;
+    border-radius: 6px;
+    margin-bottom: 16px;
+}
+
+.report-stat {
+    text-align: center;
+}
+
+.report-stat-value {
+    display: block;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #111;
+}
+
+.report-stat-label {
+    font-size: 0.6875rem;
+    color: #777;
+}
+
+/* Courses Table */
+.report-courses {
+    margin-top: 16px;
+}
+
+.report-courses h4 {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.report-courses table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8125rem;
+}
+
+.report-courses th,
+.report-courses td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.report-courses th {
+    font-weight: 500;
+    color: #777;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+}
+
+.report-courses td {
+    color: #111;
+}
+
+.report-grade {
+    font-weight: 600;
+    color: #5b2886;
+}
+
+/* Grading Scale */
+.report-grading-scale {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+}
+
+.report-grading-scale h4 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #777;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.report-scale-grid {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.report-scale-item {
+    text-align: center;
+    padding: 6px 10px;
+    background: #f7f7f7;
+    border-radius: 4px;
+}
+
+.report-scale-grade {
+    display: block;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #111;
+}
+
+.report-scale-points {
+    font-size: 0.625rem;
+    color: #777;
+}
+
+/* Footer */
+.report-footer {
+    margin-top: 20px;
+    text-align: center;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+}
+
+.report-footer p {
+    font-size: 0.6875rem;
+    color: #999;
+}
+
+.report-disclaimer {
+    font-style: italic;
+    margin-top: 4px;
+}
+
+/* Close Button */
+.export-close {
+    width: 100%;
+    padding: 14px;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: background 150ms;
+}
+
+.export-close:hover {
+    background: var(--border);
+}

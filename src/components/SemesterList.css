@@ -1,0 +1,86 @@
+.semester-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.semester-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: box-shadow 150ms;
+}
+
+.semester-card:hover {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.semester-card__info {
+    flex: 1;
+    min-width: 0;
+}
+
+.semester-card__name {
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: #111;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.semester-card__details {
+    font-size: 0.75rem;
+    color: #777;
+}
+
+.semester-card__gpa {
+    text-align: right;
+}
+
+.semester-card__gpa-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111;
+    line-height: 1.2;
+}
+
+.semester-card__gpa-label {
+    font-size: 0.6875rem;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.semester-card__actions {
+    display: flex;
+    gap: 4px;
+}
+
+/* Empty state */
+.semester-list__empty {
+    text-align: center;
+    padding: 32px 16px;
+}
+
+.semester-list__empty-icon {
+    font-size: 1.75rem;
+    margin-bottom: 8px;
+    opacity: 0.35;
+}
+
+.semester-list__empty p {
+    color: #777;
+    font-size: 0.875rem;
+    margin-bottom: 2px;
+}
+
+.semester-list__empty-hint {
+    font-size: 0.75rem;
+    color: #999;
+}
