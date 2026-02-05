@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { FaHome, FaBookOpen, FaChartBar, FaSun, FaMoon, FaPlus } from 'react-icons/fa';
+import { FaHome, FaBookOpen, FaChartBar, FaSun, FaMoon, FaPlus, FaUser, FaSignOutAlt } from 'react-icons/fa';
+import { useAuth } from './contexts/AuthContext';
 import { useGPACalculator } from './hooks/useGPACalculator';
 import { GPAResult } from './components/GPAResult';
 import { CourseInput } from './components/CourseInput';
@@ -10,6 +11,7 @@ import { Dashboard } from './components/Dashboard';
 import { ExportReport } from './components/ExportReport';
 import { ForecastTool } from './components/ForecastTool';
 import { Modal } from './components/Modal';
+import { AuthModal } from './components/Auth';
 import './App.css';
 
 /**
@@ -31,6 +33,11 @@ function App() {
   const [semesterModal, setSemesterModal] = useState({ open: false, editing: null });
   const [exportModal, setExportModal] = useState(false);
   const [forecastModal, setForecastModal] = useState(false);
+  const [authModal, setAuthModal] = useState(false);
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
+
+  // Auth state
+  const { user, isAuthenticated, signOut, loading: authLoading } = useAuth();
 
   // Apply dark mode
   useEffect(() => {
@@ -57,6 +64,7 @@ function App() {
     cgpaResult,
     predictedCGPA,
     hasForecastedCourses,
+    loading: dataLoading,
   } = useGPACalculator();
 
   // Course modal handlers
@@ -115,13 +123,57 @@ function App() {
       <header className="header">
         <div className="header__content">
           <h1>UNIBEN GPA Calculator</h1>
-          <button
-            className="header__theme-toggle"
-            onClick={() => setDarkMode(!darkMode)}
-            aria-label="Toggle dark mode"
-          >
-            {darkMode ? <FaSun /> : <FaMoon />}
-          </button>
+          <div className="header__actions">
+            <button
+              className="header__theme-toggle"
+              onClick={() => setDarkMode(!darkMode)}
+              aria-label="Toggle dark mode"
+            >
+              {darkMode ? <FaSun /> : <FaMoon />}
+            </button>
+
+            {/* Auth Button / User Menu */}
+            {isAuthenticated ? (
+              <div className="user-menu">
+                <button
+                  className="user-menu__trigger"
+                  onClick={() => setUserMenuOpen(!userMenuOpen)}
+                >
+                  <div className="user-menu__avatar">
+                    {user?.email?.charAt(0).toUpperCase()}
+                  </div>
+                  <span className="user-menu__email">
+                    {user?.email?.split('@')[0]}
+                  </span>
+                </button>
+                {userMenuOpen && (
+                  <div className="user-menu__dropdown">
+                    <div className="user-menu__item" style={{ opacity: 0.7, cursor: 'default' }}>
+                      <FaUser />
+                      {user?.email}
+                    </div>
+                    <button
+                      className="user-menu__item user-menu__item--danger"
+                      onClick={() => {
+                        signOut();
+                        setUserMenuOpen(false);
+                      }}
+                    >
+                      <FaSignOutAlt />
+                      Sign out
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <button
+                className="header__auth-btn"
+                onClick={() => setAuthModal(true)}
+              >
+                Sign in
+              </button>
+            )}
+          </div>
         </div>
       </header>
 
@@ -327,6 +379,12 @@ function App() {
           onClose={() => setExportModal(false)}
         />
       </Modal>
+
+      {/* Auth Modal */}
+      <AuthModal
+        isOpen={authModal}
+        onClose={() => setAuthModal(false)}
+      />
     </div>
   );
 }
